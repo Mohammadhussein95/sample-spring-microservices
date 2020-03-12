@@ -24,3 +24,13 @@ jobs:
       with:
         name: account-service
         path: account-service
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: test-service
+        path: test-service
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: customer-service
+        path: customer-service
