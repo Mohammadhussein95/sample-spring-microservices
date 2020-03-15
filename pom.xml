@@ -22,7 +22,7 @@
           <repository>
               <id>github</id>
               <name>GitHub OWNER Apache Maven Packages</name>
-              <url>https://maven.pkg.github.com/mohammadhussein/sample-spring-microservices</url>
+              <url>https://maven.pkg.github.com/mohammadhussein95/sample-spring-microservices</url>
           </repository>
        </distributionManagement>
 
