@@ -19,21 +19,21 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: account-service
-        path: account-service
+  #  - name: Archive production artifacts
+  #    uses: actions/upload-artifact@v1
+   #   with:
+   #     name: account-service
+  #      path: account-service
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
       with:
         name: discovery-service
         path: discovery-service
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: customer-service
-        path: customer-service
+ #   - name: Archive production artifacts
+ #     uses: actions/upload-artifact@v1
+ #     with:
+ #       name: customer-service
+ #       path: customer-service
     
 #    - uses: actions/labeler@v2
 #      with:
