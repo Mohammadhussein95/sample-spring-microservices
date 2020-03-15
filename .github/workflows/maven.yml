@@ -37,5 +37,7 @@ jobs:
  
     - name: Moving build to artifacts directory
       run: mvn deploy
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
