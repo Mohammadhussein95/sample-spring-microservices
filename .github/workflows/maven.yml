@@ -40,7 +40,7 @@ jobs:
         repo-token: a7d52d2519e2c9add9c54f492923af08d671d7ca
     
     - name: Moving build to artifacts directory
-      run: mvn deploy -DrepositoryId=github
+      run: mvn deploy -DrepositoryId=github -Dfile=discovery-service/target/discovery-service.jar
       
 
 
