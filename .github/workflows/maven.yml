@@ -34,10 +34,13 @@ jobs:
       with:
         name: customer-service
         path: customer-service
- 
-    - name: Moving build to artifacts directory
-      run: mvn deploy
+    
+    - uses: actions/labeler@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Moving build to artifacts directory
+      run: mvn deploy
+      
 
 
