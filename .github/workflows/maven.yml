@@ -37,7 +37,7 @@ jobs:
     
     - uses: actions/labeler@v2
       with:
-        repo-token: ${{ secrets.a7d52d2519e2c9add9c54f492923af08d671d7ca }}
+        repo-token: ${{ a7d52d2519e2c9add9c54f492923af08d671d7ca }}
     
     - name: Moving build to artifacts directory
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/Mohammadhussein95 -Dtoken=GITHUB_TOKEN
