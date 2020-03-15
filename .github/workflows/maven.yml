@@ -42,7 +42,7 @@ jobs:
     - name: Moving build to artifacts directory
       run: |
         mkdir -p ~/.m2
-        echo "<settings><servers><server><id>github</id><username>$(echo "sample-spring-microservices" | awk -F / '{print $1}')</username><password>\a7d52d2519e2c9add9c54f492923af08d671d7ca</password></server></servers></settings>" > ~/.m2/settings.xml
+        echo "<settings><servers><server><id>github</id><username>$(echo "sample-spring-microservices" | awk -F / '{print $1}')</username><password>\"a7d52d2519e2c9add9c54f492923af08d671d7ca"</password></server></servers></settings>" > ~/.m2/settings.xml
         REPO="gh::default::https://maven.pkg.github.com/mohammadhussein95/sample-spring-microservices"
         mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}"
       
