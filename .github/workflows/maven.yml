@@ -40,7 +40,7 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Moving build to artifacts directory
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/Mohammadhussein95 -Dtoken=GH_TOKEN
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/Mohammadhussein95 -Dtoken=GITHUB_TOKEN
       
 
 
