@@ -17,6 +17,14 @@
 		<spring.boot.eureka>1.2.2.RELEASE</spring.boot.eureka>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<distributionManagement>
+          <repository>
+              <id>github</id>
+              <name>GitHub OWNER Apache Maven Packages</name>
+              <url>https://maven.pkg.github.com/mohammadhussein95/sample-spring-microservices</url>
+          </repository>
+       </distributionManagement>
 
 	<modules>
 		<module>discovery-service</module>
