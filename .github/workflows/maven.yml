@@ -40,7 +40,11 @@ jobs:
         repo-token: a7d52d2519e2c9add9c54f492923af08d671d7ca
     
     - name: Moving build to artifacts directory
-      run: mvn deploy -DrepositoryId=github -Dfile=discovery-service/target/discovery-service.jar
+      run: |
+        mkdir -p ~/.m2
+        echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>\${env.GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+        REPO="gh::default::https://maven.pkg.github.com/${GITHUB_REPOSITORY}"
+        mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}"
       
 
 
