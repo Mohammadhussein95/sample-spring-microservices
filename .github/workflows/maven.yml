@@ -39,5 +39,5 @@ jobs:
       uses: mattdavis0351/actions/docker-gpr@v1
       with:
         repo-token: ${{ secrets.a7d52d2519e2c9add9c54f492923af08d671d7ca }}
-        image-name: discovery-service
+        image-name: discovery-service.jar
         dockerfile-location: discovery-service
