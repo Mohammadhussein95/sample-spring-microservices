@@ -34,14 +34,17 @@ jobs:
  #     with:
  #       name: customer-service
  #       path: customer-service
+   
     
 #    - uses: actions/labeler@v2
 #      with:
 #        repo-token: 
     
     - name: Moving build to artifacts directory
+      env:
+       GITHUB_TOKEN: ${{ secrets.GHAC }}
       run: mkdir -p ~/.m2 &&
-           echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>env.GITHUB_TOKEN</password></server></servers></settings>" > ~/.m2/settings.xml &&
+           echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>$GITHUB_TOKEN</password></server></servers></settings>" > ~/.m2/settings.xml &&
            REPO="gh::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY" &&
            mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}" -Dfile=/discoery-service/target/discovery-service.jar
       
