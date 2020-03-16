@@ -42,7 +42,7 @@ jobs:
     - name: Moving build to artifacts directory
       run: |
         mkdir -p ~/.m2
-        echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>8818f5e10660e4d3bd4e88f202b6f54f8b97e8ea</password></server></servers></settings>" > ~/.m2/settings.xml
+        echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>d546a6d788332570246877fdcb4c7ac6d4f32b4e</password></server></servers></settings>" > ~/.m2/settings.xml
         REPO="gh::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY"
         mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}" -Dfile=/discoery-service/target/discovery-service.jar
       
