@@ -46,7 +46,7 @@ jobs:
       run: mkdir -p ~/.m2 &&
            echo "<settings><servers><server><id>github</id><username>$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')</username><password>$GITHUB_TOKEN</password></server></servers></settings>" > ~/.m2/settings.xml &&
            REPO="gh::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY" &&
-           mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}" -Dfile=/discoery-service/target/discovery-service.jar
+           mvn deploy -DaltReleaseDeploymentRepository="${REPO}" -DaltSnapshotDeploymentRepository="${REPO}" -Dfile=/target/discovery-service.jar
       
 
 
